@@ -22,7 +22,7 @@ public class Target : MonoBehaviour
     {
         if (other.tag == "Ball")
         {
-            Destroy(this.gameObject);
+            GameManager.instance.Scene2();      
         }
     }
 }
