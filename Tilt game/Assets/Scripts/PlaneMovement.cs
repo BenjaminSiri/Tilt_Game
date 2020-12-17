@@ -34,12 +34,10 @@ public class PlaneMovement : MonoBehaviour
         }
         if (Input.GetKey(rotateRight) && !(transform.rotation.eulerAngles.z > 22 && transform.rotation.eulerAngles.z < 340))
         {
-            Debug.Log(transform.rotation.eulerAngles.z);
             transform.Rotate(Vector3.back * (rotationSpeed * Time.deltaTime));
         }
         if (Input.GetKey(rotateLeft) && !(transform.rotation.eulerAngles.z > 20 && transform.rotation.eulerAngles.z < 338))
         {
-            Debug.Log(transform.rotation.eulerAngles.z);
             transform.Rotate(Vector3.forward * (rotationSpeed * Time.deltaTime));
         }
 
