@@ -28,18 +28,23 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         currentScene = "Level 1";
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(currentScene);
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 
     public void Scene2()
     {
         currentScene = "Level 2";
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene(currentScene);
     }
 
     public void Scene3()
     {
         currentScene = "Level 3";
-        SceneManager.LoadScene("Level 3");
+        SceneManager.LoadScene(currentScene);
     }
 }
