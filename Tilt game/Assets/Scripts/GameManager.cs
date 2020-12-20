@@ -47,4 +47,10 @@ public class GameManager : MonoBehaviour
         currentScene = "Level 3";
         SceneManager.LoadScene(currentScene);
     }
+
+    public void Scene4()
+    {
+        currentScene = "Level 4";
+        SceneManager.LoadScene(currentScene);
+    }
 }

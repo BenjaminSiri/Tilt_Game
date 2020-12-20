@@ -30,6 +30,10 @@ public class Target : MonoBehaviour
             {
                 GameManager.instance.Scene3();
             }
+            else if(GameManager.instance.currentScene == "Level 3")
+            {
+                GameManager.instance.Scene4();
+            }
         }
     }
 }
