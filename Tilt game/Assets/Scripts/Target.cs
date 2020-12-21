@@ -34,6 +34,10 @@ public class Target : MonoBehaviour
             {
                 GameManager.instance.Scene4();
             }
+            else if(GameManager.instance.currentScene == "Level 4")
+            {
+                GameManager.instance.Scene5();
+            }
         }
     }
 }
