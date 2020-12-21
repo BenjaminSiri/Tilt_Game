@@ -32,7 +32,8 @@ public class PlaneMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isLerping) {
+        if (isLerping)
+        {
             transform.position = Vector3.Lerp(transform.position, myPositions[posIndex], lerpTime * Time.deltaTime);
             t = Mathf.Lerp(t, 1f, lerpTime * Time.deltaTime);
             if (t > .9f)
@@ -42,25 +43,27 @@ public class PlaneMovement : MonoBehaviour
                 posIndex = (posIndex >= length) ? 0 : posIndex;
             }
         }
+        else
+        {
+            Vector3 eulerRotation = transform.rotation.eulerAngles;
+            transform.rotation = Quaternion.Euler(eulerRotation.x, 0, eulerRotation.z);
 
-        Vector3 eulerRotation = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(eulerRotation.x, 0, eulerRotation.z);
-
-        if (Input.GetKey(rotateUp) && !(transform.rotation.eulerAngles.x > 20 && transform.rotation.eulerAngles.x < 338))
-        {
-            transform.Rotate(Vector3.right * (rotationSpeed * Time.deltaTime));
-        }
-        if (Input.GetKey(rotateDown) && !(transform.rotation.eulerAngles.x > 22 && transform.rotation.eulerAngles.x < 340))
-        {
-            transform.Rotate(Vector3.left * (rotationSpeed * Time.deltaTime));
-        }
-        if (Input.GetKey(rotateRight) && !(transform.rotation.eulerAngles.z > 22 && transform.rotation.eulerAngles.z < 340))
-        {
-            transform.Rotate(Vector3.back * (rotationSpeed * Time.deltaTime));
-        }
-        if (Input.GetKey(rotateLeft) && !(transform.rotation.eulerAngles.z > 20 && transform.rotation.eulerAngles.z < 338))
-        {
-            transform.Rotate(Vector3.forward * (rotationSpeed * Time.deltaTime));
+            if (Input.GetKey(rotateUp) && !(transform.rotation.eulerAngles.x > maxRotation && transform.rotation.eulerAngles.x < (360 - (maxRotation+2))))
+            {
+                transform.Rotate(Vector3.right * (rotationSpeed * Time.deltaTime));
+            }
+            if (Input.GetKey(rotateDown) && !(transform.rotation.eulerAngles.x > (maxRotation+2) && transform.rotation.eulerAngles.x < (360-maxRotation)))
+            {
+                transform.Rotate(Vector3.left * (rotationSpeed * Time.deltaTime));
+            }
+            if (Input.GetKey(rotateRight) && !(transform.rotation.eulerAngles.z > (maxRotation+2) && transform.rotation.eulerAngles.z < (360-maxRotation)))
+            {
+                transform.Rotate(Vector3.back * (rotationSpeed * Time.deltaTime));
+            }
+            if (Input.GetKey(rotateLeft) && !(transform.rotation.eulerAngles.z > maxRotation && transform.rotation.eulerAngles.z < (360 - (maxRotation + 2))))
+            {
+                transform.Rotate(Vector3.forward * (rotationSpeed * Time.deltaTime));
+            }
         }
     }
 
