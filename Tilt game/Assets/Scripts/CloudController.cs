@@ -8,11 +8,10 @@ public class CloudController : MonoBehaviour
     [SerializeField] float cloudSpeed;
     [SerializeField] float speedVariation;
     [SerializeField] float maxY, minY, startX;
+    [SerializeField] float spawnRate;
+    float timer = 2f;
 
     [SerializeField] GameObject cloudPrefab;
-
-    private float timer = 0f;
-    private float spawnRate = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +22,15 @@ public class CloudController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer == spawnRate)
+        timer -= Time.deltaTime;
+        if(timer <= 0)
         {
+            Debug.Log("Spawn cloud");
             GameObject newCloud = Instantiate(cloudPrefab, randomPosition(), Quaternion.identity);
             newCloud.AddComponent<Rigidbody>();
-            newCloud.transform.position = new Vector3(0.0f, -2.0f, 0.0f);
-            newCloud.rigidbody.velocity = new Vector3(0.0f, 10.0f, 0.0f);
+            newCloud.GetComponent<Rigidbody>().useGravity = false;
+            newCloud.GetComponent<Rigidbody>().velocity = new Vector3(-(cloudSpeed+Random.Range(-speedVariation, speedVariation)), 0.0f, 0.0f);
+            timer = spawnRate;
         }
     }
 
