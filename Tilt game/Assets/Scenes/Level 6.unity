@@ -1381,6 +1381,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4575857906703428178, guid: d180bd3dc609e6a4ba35972322ff25f6,
+        type: 3}
+      propertyPath: myPositions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575857906703428178, guid: d180bd3dc609e6a4ba35972322ff25f6,
+        type: 3}
+      propertyPath: myPositions.Array.data[2].y
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4575857906703428179, guid: d180bd3dc609e6a4ba35972322ff25f6,
         type: 3}
       propertyPath: m_Material

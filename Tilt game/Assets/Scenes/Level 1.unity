@@ -474,7 +474,7 @@ PrefabInstance:
     - target: {fileID: 4575857906703428178, guid: d180bd3dc609e6a4ba35972322ff25f6,
         type: 3}
       propertyPath: myPositions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4575857906703428178, guid: d180bd3dc609e6a4ba35972322ff25f6,
         type: 3}
@@ -490,6 +490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxRotation
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4575857906703428178, guid: d180bd3dc609e6a4ba35972322ff25f6,
+        type: 3}
+      propertyPath: myPositions.Array.data[2].y
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4575857906703428181, guid: d180bd3dc609e6a4ba35972322ff25f6,
         type: 3}

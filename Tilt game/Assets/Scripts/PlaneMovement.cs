@@ -26,7 +26,7 @@ public class PlaneMovement : MonoBehaviour
     void Start()
     {
         length = myPositions.Length;
-        StartCoroutine(waitSeconds(4.5f));
+        StartCoroutine(StopLerp(4.5f));
     }
 
     // Update is called once per frame
@@ -67,9 +67,20 @@ public class PlaneMovement : MonoBehaviour
         }
     }
 
-    IEnumerator waitSeconds(float sec)
+    public void LerpUp()
+    {
+        StartCoroutine(StartLerp(3.0f));
+    }
+
+    IEnumerator StopLerp(float sec)
     {
         yield return new WaitForSeconds(sec);
         isLerping = false;
+	}
+
+    IEnumerator StartLerp(float sec)
+    {
+        isLerping = true;
+        yield return new WaitForSeconds(sec);
     }
 }

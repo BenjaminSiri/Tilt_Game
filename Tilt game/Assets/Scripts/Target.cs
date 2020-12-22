@@ -22,7 +22,14 @@ public class Target : MonoBehaviour
     {
         if (other.tag == "Ball")
         {
-            GameManager.instance.nextScene();
+            this.transform.parent.GetComponentInParent<PlaneMovement>().LerpUp();
+            StartCoroutine(WaitNextScene(2));
         }
+    }
+
+    IEnumerator WaitNextScene(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        GameManager.instance.nextScene();
     }
 }
