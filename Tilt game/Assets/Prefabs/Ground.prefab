@@ -303,6 +303,10 @@ MonoBehaviour:
   rotateDown: 115
   rotationSpeed: 30
   maxRotation: 20
+  myPositions:
+  - {x: 0, y: 11, z: 0}
+  - {x: 0, y: 0, z: 0}
+  lerpTime: 1
 --- !u!54 &4575857906703428191
 Rigidbody:
   m_ObjectHideFlags: 0

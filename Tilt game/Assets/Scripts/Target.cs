@@ -22,22 +22,7 @@ public class Target : MonoBehaviour
     {
         if (other.tag == "Ball")
         {
-            if(GameManager.instance.currentScene == "Level 1")
-            {
-                GameManager.instance.Scene2();
-            }    
-            else if(GameManager.instance.currentScene == "Level 2")
-            {
-                GameManager.instance.Scene3();
-            }
-            else if(GameManager.instance.currentScene == "Level 3")
-            {
-                GameManager.instance.Scene4();
-            }
-            else if(GameManager.instance.currentScene == "Level 4")
-            {
-                GameManager.instance.Scene5();
-            }
+            GameManager.instance.nextScene();
         }
     }
 }
