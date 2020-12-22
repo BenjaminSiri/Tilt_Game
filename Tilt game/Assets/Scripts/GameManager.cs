@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public string[] Scenes = { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6" };
+    public string[] Scenes = { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Win Scene" };
     public int currentScene;
 
     // Start is called before the first frame update
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public void nextScene()
     {
         currentScene++;
+        Debug.Log(Scenes[currentScene]);
         SceneManager.LoadScene(Scenes[currentScene]);
     }
 
@@ -41,5 +42,10 @@ public class GameManager : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
