@@ -30,6 +30,7 @@ public class Target : MonoBehaviour
     IEnumerator WaitNextScene(float sec)
     {
         yield return new WaitForSeconds(sec);
+        Debug.Log("'Target' loading next scene");
         GameManager.instance.nextScene();
     }
 }
