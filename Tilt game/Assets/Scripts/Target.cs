@@ -23,8 +23,14 @@ public class Target : MonoBehaviour
         if (other.tag == "Ball")
         {
             this.transform.parent.GetComponentInParent<PlaneMovement>().LerpUp();
-            GameManager.instance.WaitNextScene(2);
-            Destroy(this);
+            StartCoroutine(WaitNextScene(2));
         }
+    }
+
+    IEnumerator WaitNextScene(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Debug.Log("'Target' loading next scene");
+        GameManager.instance.nextScene();
     }
 }
