@@ -50,4 +50,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void WaitNextScene(float sec)
+    {
+        StartCoroutine(WaitNextS(sec));
+    }
+
+    IEnumerator WaitNextS(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        Debug.Log("'Target' loading next scene");
+        nextScene();
+    }
 }
